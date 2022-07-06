@@ -1,0 +1,11 @@
+{
+  "repo": "tweak",
+  "owner": {
+    "username": "tweak",
+    "email": "tweak6259@gmail.com"
+  },
+  "target": {
+    "CNAME":"dns.talosbot.xyz"
+  },
+  "proxied": false
+}
