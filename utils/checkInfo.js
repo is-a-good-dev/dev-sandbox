@@ -1,4 +1,6 @@
 const fetch = require('node-fetch');
+const core = require('@actions/core');
+
 async function checkEmail(email) {
   console.log(`Checking: ${email}`)
   const url = `https://email-checker.p.rapidapi.com/verify/v1?email=${encodeURIComponent(email)}`;
@@ -13,6 +15,7 @@ async function checkEmail(email) {
   console.log(res);
   if (res.status == "valid" && res.disposable != true) return true;
   if (res.status == "unknown" && res.disposable != true) return "unknown";
+  core.setOutput('infoReason', res.reason);
   return false;
 }
 
