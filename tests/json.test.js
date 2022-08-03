@@ -7,7 +7,7 @@ core.setOutput('infoMessage', "Could not validate info.");
 core.setOutput('recordMessage', "Could not validate records.");
 test('check if json file has required info', async () => {
   const passed = await checkInfo(data);
-  let infoMessage = passed === true ? "Valid Info Provided." : passed === "unknown" ? "Error Verifying Email.\nA maintainer will have to manually verify your email." : "Invalid Info Provided.\nPlease check your provided info.\nReason:"; 
+  let infoMessage = passed === true ? "Valid Info Provided." : passed === "unknown" ? "Error Verifying Email.\nA maintainer will have to manually verify your email.\nReason:" : "Invalid Info Provided.\nPlease check your provided info.\nReason:"; 
   core.setOutput('infoMessage', infoMessage);
   expect(passed).toBeTruthy();
 }, 15000);
