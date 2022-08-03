@@ -28,6 +28,7 @@ jobs:
           **Validation Results**
           - Information Validation
           ${{steps.tests.outputs.infoMessage}}
+          ${{steps.tests.outputs.infoReason}}
           - DNS Record Validation
           ${{steps.tests.outputs.recordMessage}}
           
