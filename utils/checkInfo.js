@@ -13,9 +13,9 @@ async function checkEmail(email) {
   };
   const res = await fetch(url, options).then(res => res.json());
   console.log(res);
+  core.setOutput('infoReason', res.reason);
   if (res.status == "valid" && res.disposable != true) return true;
   if (res.status == "unknown" && res.disposable != true) return "unknown";
-  core.setOutput('infoReason', res.reason);
   return false;
 }
 
